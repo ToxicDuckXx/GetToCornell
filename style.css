@@ -62,7 +62,7 @@ button {
     padding: 12px 25px;
     font-size: 1em;
     font-family: 'Lexend', sans-serif; /* Apply Lexend font to the button */
-    background-color: #333; /* Dark gray color */
+    background: linear-gradient(135deg, #deb887, #d2a679); /* Light brown gradient background */
     color: #fff;
     border: none;
     border-radius: 25px; /* Rounded corners */
@@ -72,10 +72,11 @@ button {
 }
 
 button:hover {
-    background-color: #555; /* Slightly lighter shade on hover for better visual feedback */
+    background: linear-gradient(135deg, #d2a679, #c18a5b); /* Slightly darker gradient on hover */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow for lift effect */
     transform: translateY(-3px); /* Slight lift on hover */
 }
+
 
 p#resultMessage {
     margin-top: 20px;
