@@ -15,7 +15,8 @@
         <input type="text" id="date" placeholder="YYYY-MM-DD">
 
         <button onclick="storeData()">Submit</button>
-        <p id="resultMessage"></p> <!-- Paragraph to display the result -->
+        <p id="resultMessageAddress"></p> <!-- Paragraph to display the result -->
+        <p id="resultMessageDate"></p>
     </div>
 
     <div class="footer">
@@ -35,21 +36,23 @@
             const userAddress = document.getElementById("address").value.trim();
             const userDate = document.getElementById("date").value.trim();
 
-            let message = '';
+            let messageAddress = '';
+            let messageDate = '';
 
             if (userAddress) {
-                message += "Address stored! " + userAddress;
+                messageAddress += "Address stored: " + userAddress;
             } else {
-                message += "Please enter a valid address. ";
+                messageAddress += "Please enter a valid address. ";
             }
 
             if (isValidDate(userDate)) {
-                message += "Date stored! " + userDate;
+                messageDate += "Date stored: " + userDate;
             } else {
-                message += "Enter a valid date.";
+                messageDate += "Enter a valid date.";
             }
 
-            document.getElementById("resultMessage").innerText = message;
+            document.getElementById("resultMessageAddress").innerText = messageAddress;
+            document.getElementById("resultMessageDate").innerText = messageDate;
         }
 
         function isValidDate(dateString) {
