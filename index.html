@@ -17,7 +17,7 @@
 
     <script>
         function storeAddress() {
-            let userAddress = document.getElementById("address").value;
+            const userAddress = document.getElementById("address").value.trim();
 
             if (userAddress) {
                 calculateDistance(userAddress);
@@ -30,6 +30,9 @@
             const service = new google.maps.DistanceMatrixService();
             const destination = "Cornell University, Ithaca, NY";
             
+            // Show loading text while waiting for API response
+            document.getElementById("resultMessage").innerText = "Calculating distance...";
+
             service.getDistanceMatrix(
                 {
                     origins: [userAddress],
@@ -45,12 +48,14 @@
                             document.getElementById("resultMessage").innerText = 
                                 `Your address is: ${userAddress} and you are ${distance} from Cornell University`;
                         } else {
+                            console.error("Distance calculation failed: " + result.status);
                             document.getElementById("resultMessage").innerText = 
                                 "Could not calculate distance. Please check the address and try again.";
                         }
                     } else {
+                        console.error("Google Maps API error: " + status);
                         document.getElementById("resultMessage").innerText = 
-                            "Error with Google Maps API: " + status;
+                            "Error with Google Maps API: " + status + ". Please try again.";
                     }
                 }
             );
