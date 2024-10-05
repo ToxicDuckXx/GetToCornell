@@ -74,7 +74,7 @@ p#resultMessage {
     color: #333;
 }
 
-footer {
+.footer {
     background-color: #d2b48c; /* Light brown for the overall box */
     padding: 15px;
     border-radius: 8px;
