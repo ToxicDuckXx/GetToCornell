@@ -11,10 +11,22 @@
         <label for="address">Enter your address:</label>
         <input type="text" id="address" placeholder="Street Name, City">
         <button onclick="storeAddress()">Submit</button>
-        <p id = "Calculating distance..."></p>
+        <p Calculating distance...></p>
         <p id="resultMessage"></p> <!-- Paragraph to display the result -->
     </div>
 
+    <div class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/" target="_blank">
+                <img src="github-logo.png" alt="GitHub Logo">
+            </a>
+            <a href="https://linkedin.com/" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn Logo">
+            </a>
+        </div>
+        <p>Made by Lucas, Jack, and Duke @BigRed//Hacks 2024</p>
+    </div>
+    
     <script>
         function storeAddress() {
             const userAddress = document.getElementById("address").value.trim();
