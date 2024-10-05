@@ -1,0 +1,332 @@
+[
+    {
+        "metropolitan_area": "New York City",
+        "iata_code": "NYC",
+        "latitude": 40.7128,
+        "longitude": -74.0060
+    },
+    {
+        "metropolitan_area": "Los Angeles",
+        "iata_code": "LAX",
+        "latitude": 34.0522,
+        "longitude": -118.2437
+    },
+    {
+        "metropolitan_area": "Chicago",
+        "iata_code": "ORD",
+        "latitude": 41.8781,
+        "longitude": -87.6298
+    },
+    {
+        "metropolitan_area": "Houston",
+        "iata_code": "IAH",
+        "latitude": 29.7604,
+        "longitude": -95.3698
+    },
+    {
+        "metropolitan_area": "Phoenix",
+        "iata_code": "PHX",
+        "latitude": 33.4484,
+        "longitude": -112.0740
+    },
+    {
+        "metropolitan_area": "Philadelphia",
+        "iata_code": "PHL",
+        "latitude": 39.9526,
+        "longitude": -75.1652
+    },
+    {
+        "metropolitan_area": "San Antonio",
+        "iata_code": "SAT",
+        "latitude": 29.4241,
+        "longitude": -98.4936
+    },
+    {
+        "metropolitan_area": "San Diego",
+        "iata_code": "SAN",
+        "latitude": 32.7157,
+        "longitude": -117.1611
+    },
+    {
+        "metropolitan_area": "Dallas/Fort Worth",
+        "iata_code": "DFW",
+        "latitude": 32.7767,
+        "longitude": -96.7970
+    },
+    {
+        "metropolitan_area": "San Francisco",
+        "iata_code": "SFO",
+        "latitude": 37.7749,
+        "longitude": -122.4194
+    },
+    {
+        "metropolitan_area": "Miami",
+        "iata_code": "MIA",
+        "latitude": 25.7617,
+        "longitude": -80.1918
+    },
+    {
+        "metropolitan_area": "Atlanta",
+        "iata_code": "ATL",
+        "latitude": 33.4484,
+        "longitude": -84.3871
+    },
+    {
+        "metropolitan_area": "Washington, D.C.",
+        "iata_code": "DCA",
+        "latitude": 38.8951,
+        "longitude": -77.0364
+    },
+    {
+        "metropolitan_area": "Boston",
+        "iata_code": "BOS",
+        "latitude": 42.3601,
+        "longitude": -71.0589
+    },
+    {
+        "metropolitan_area": "Seattle",
+        "iata_code": "SEA",
+        "latitude": 47.6062,
+        "longitude": -122.3321
+    },
+    {
+        "metropolitan_area": "Denver",
+        "iata_code": "DEN",
+        "latitude": 39.7392,
+        "longitude": -104.9903
+    },
+    {
+        "metropolitan_area": "Orlando",
+        "iata_code": "MCO",
+        "latitude": 28.5383,
+        "longitude": -81.3792
+    },
+    {
+        "metropolitan_area": "Minneapolis/St. Paul",
+        "iata_code": "MSP",
+        "latitude": 44.9537,
+        "longitude": -93.0900
+    },
+    {
+        "metropolitan_area": "Detroit",
+        "iata_code": "DTW",
+        "latitude": 42.3314,
+        "longitude": -83.0458
+    },
+    {
+        "metropolitan_area": "Baltimore",
+        "iata_code": "BWI",
+        "latitude": 39.2904,
+        "longitude": -76.6122
+    },
+    {
+        "metropolitan_area": "Tampa Bay",
+        "iata_code": "TPA",
+        "latitude": 27.9506,
+        "longitude": -82.4572
+    },
+    {
+        "metropolitan_area": "St. Louis",
+        "iata_code": "STL",
+        "latitude": 38.6270,
+        "longitude": -90.1994
+    },
+    {
+        "metropolitan_area": "Portland",
+        "iata_code": "PDX",
+        "latitude": 45.5155,
+        "longitude": -122.6793
+    },
+    {
+        "metropolitan_area": "Las Vegas",
+        "iata_code": "LAS",
+        "latitude": 36.1699,
+        "longitude": -115.1398
+    },
+    {
+        "metropolitan_area": "Charlotte",
+        "iata_code": "CLT",
+        "latitude": 35.2271,
+        "longitude": -80.8431
+    },
+    {
+        "metropolitan_area": "Cincinnati",
+        "iata_code": "CVG",
+        "latitude": 39.1031,
+        "longitude": -84.5120
+    },
+    {
+        "metropolitan_area": "Kansas City",
+        "iata_code": "MCI",
+        "latitude": 39.0997,
+        "longitude": -94.5786
+    },
+    {
+        "metropolitan_area": "Indianapolis",
+        "iata_code": "IND",
+        "latitude": 39.7684,
+        "longitude": -86.1581
+    },
+    {
+        "metropolitan_area": "Raleigh/Durham",
+        "iata_code": "RDU",
+        "latitude": 35.9940,
+        "longitude": -78.8986
+    },
+    {
+        "metropolitan_area": "Nashville",
+        "iata_code": "BNA",
+        "latitude": 36.1627,
+        "longitude": -86.7816
+    },
+    {
+        "metropolitan_area": "Sacramento",
+        "iata_code": "SMF",
+        "latitude": 38.5816,
+        "longitude": -121.4944
+    },
+    {
+        "metropolitan_area": "Jacksonville",
+        "iata_code": "JAX",
+        "latitude": 30.3322,
+        "longitude": -81.6557
+    },
+    {
+        "metropolitan_area": "Columbus",
+        "iata_code": "CMH",
+        "latitude": 39.9612,
+        "longitude": -82.9988
+    },
+    {
+        "metropolitan_area": "Salt Lake City",
+        "iata_code": "SLC",
+        "latitude": 40.7608,
+        "longitude": -111.8910
+    },
+    {
+        "metropolitan_area": "Oklahoma City",
+        "iata_code": "OKC",
+        "latitude": 35.4676,
+        "longitude": -97.5164
+    },
+    {
+        "metropolitan_area": "Richmond",
+        "iata_code": "RIC",
+        "latitude": 37.5407,
+        "longitude": -77.4360
+    },
+    {
+        "metropolitan_area": "Louisville",
+        "iata_code": "SDF",
+        "latitude": 38.2542,
+        "longitude": -85.7594
+    },
+    {
+        "metropolitan_area": "Milwaukee",
+        "iata_code": "MKE",
+        "latitude": 43.0389,
+        "longitude": -87.9065
+    },
+    {
+        "metropolitan_area": "Providence",
+        "iata_code": "PVD",
+        "latitude": 41.8240,
+        "longitude": -71.4128
+    },
+    {
+        "metropolitan_area": "Hartford",
+        "iata_code": "BDL",
+        "latitude": 41.7637,
+        "longitude": -72.6851
+    },
+    {
+        "metropolitan_area": "Tucson",
+        "iata_code": "TUS",
+        "latitude": 32.2226,
+        "longitude": -110.9747
+    },
+    {
+        "metropolitan_area": "Albany",
+        "iata_code": "ALB",
+        "latitude": 42.6526,
+        "longitude": -73.7562
+    },
+    {
+        "metropolitan_area": "Omaha",
+        "iata_code": "OMA",
+        "latitude": 41.2565,
+        "longitude": -95.9345
+    },
+    {
+        "metropolitan_area": "Boise",
+        "iata_code": "BOI",
+        "latitude": 43.6150,
+        "longitude": -116.2023
+    },
+    {
+        "metropolitan_area": "Charleston",
+        "iata_code": "CHS",
+        "latitude": 32.7765,
+        "longitude": -79.9320
+    },
+    {
+        "metropolitan_area": "Greensboro",
+        "iata_code": "GBO",
+        "latitude": 36.0726,
+        "longitude": -79.7910
+    },
+    {
+        "metropolitan_area": "El Paso",
+        "iata_code": "ELP",
+        "latitude": 31.7619,
+        "longitude": -106.4850
+    },
+    {
+        "metropolitan_area": "Grand Rapids",
+        "iata_code": "GRR",
+        "latitude": 42.9634,
+        "longitude": -85.6689
+    },
+    {
+        "metropolitan_area": "Fresno",
+        "iata_code": "FAT",
+        "latitude": 36.7378,
+        "longitude": -119.7871
+    },
+    {
+        "metropolitan_area": "Baton Rouge",
+        "iata_code": "BTR",
+        "latitude": 30.4515,
+        "longitude": -91.1871
+    },
+    {
+        "metropolitan_area": "Akron",
+        "iata_code": "CAK",
+        "latitude": 41.0814,
+        "longitude": -81.5158
+    },
+    {
+        "metropolitan_area": "Mobile",
+        "iata_code": "MOB",
+        "latitude": 30.6954,
+        "longitude": -88.0399
+    },
+    {
+        "metropolitan_area": "Spokane",
+        "iata_code": "GEG",
+        "latitude": 47.6588,
+        "longitude": -117.4260
+    },
+    {
+        "metropolitan_area": "Amarillo",
+        "iata_code": "AMA",
+        "latitude": 35.2219,
+        "longitude": -101.8313
+    },
+    {
+        "metropolitan_area": "Little Rock",
+        "iata_code": "LIT",
+        "latitude": 34.7465,
+        "longitude": -92.2896
+    }
+]
