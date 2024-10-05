@@ -57,7 +57,7 @@
             document.getElementById("resultMessageDate").innerText = messageDate;
             let theUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
             document.getElementById("debugUrl").innerText = theUrl;   
-            document.getElementById("resultFlights").innerText = 'testtest 123' + getFlights(theUrl);
+            document.getElementById("resultFlights").innerText = 'testtest 123' + getFlights(theUrl, true);
         }
 
         function isValidDate(dateString) {
@@ -84,7 +84,7 @@
         }
 
 
-        function httpGetAsync(theUrl, callback) {
+        function getFlights(theUrl, callback) {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() { 
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
