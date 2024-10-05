@@ -18,6 +18,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+    box-sizing: border-box; /* Include padding and border in the width/height calculation */
 }
 
 label {
@@ -36,6 +37,7 @@ input[type="text"] {
     background-color: #c19a6b; /* Slightly darker brown for the input box */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    box-sizing: border-box; /* Include padding and border in the width/height calculation */
 }
 
 input[type="text"]:focus {
