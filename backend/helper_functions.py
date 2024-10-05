@@ -4,11 +4,8 @@ import json
 import math
 
 
-ROUTES_API_KEY = ""
-FLIGHTS_API_KEY = ""
-
-import csv
-import math
+ROUTES_API_KEY = "AIzaSyBpihTHfvYy26ThvIvakeNrsPI6dmcL-dM"
+FLIGHTS_API_KEY = "a02425033bmsheb3a4cb3ac254f0p16351fjsnc919150b9517"
 
 def haversine(lat1, lon1, lat2, lon2):
     """Calculate the great circle distance in miles between two points 
@@ -73,10 +70,10 @@ def get_nearby_airports(lat, lng):
     return (skyID, entityID)
 
 def get_flights(start_skyID, startId, dest_skyID, destId, date):
-
+    
     url = "https://sky-scrapper.p.rapidapi.com/api/v2/flights/searchFlights"
 
-    querystring = {"originSkyId":start_skyID,"destinationSkyId":dest_skyID,"originEntityId":startId,"destinationEntityId":destId,"cabinClass":"economy","adults":"1","sortBy":"best","currency":"USD","market":"en-US","countryCode":"US","date":{date}}
+    querystring = {"originSkyId":start_skyID,"destinationSkyId":dest_skyID,"originEntityId":startId,"destinationEntityId":destId,"cabinClass":"economy","adults":"1","sortBy":"best","currency":"USD","market":"en-US","countryCode":"US","date":date}
 
     headers = {
         "x-rapidapi-key": "a02425033bmsheb3a4cb3ac254f0p16351fjsnc919150b9517",
@@ -84,7 +81,6 @@ def get_flights(start_skyID, startId, dest_skyID, destId, date):
     }
 
     response = requests.get(url, headers=headers, params=querystring)
-
     #flightsList = response.json()['data']['context']['legs']
     return response.json()
 
@@ -106,15 +102,21 @@ def distance(lat1, lon1, lat2, lon2):
     # Distance formula to calculate the distance between two points
     return math.sqrt((lat2 - lat1) ** 2 + (lon2 - lon1) ** 2) * 69
 
-def googleMapsBuses(startCords, endCords):
+def googleMapsBuses(airpot_code):
 
-    url = f"https://maps.googleapis.com/maps/api/directions/json?origin={startCords[0]},{startCords[1]}&destination={endCords[0]},{endCords[1]}&mode=transit&key={ROUTES_API_KEY}"
+    airpot_data = {"JFK":("40.641766", "-73.780968"), "LGA":("40.7766", "-73.874069"), "EWR":("40.689491", "-74.174538")}
+
+    cords = airpot_data.get(airpot_code)
+
+    url = f"https://maps.googleapis.com/maps/api/directions/json?origin=42.4534,-76.475266&destination={cords[0]},{cords[1]}&mode=transit&key={ROUTES_API_KEY}"
     content = requests.get(url).content
     with open("data.json", "wb") as file:
         file.write(content)
         file.close()
     json_content = json.loads(content)
-    return json_content
+    legs = json_content["routes"][0]
+
+print(googleMapsBuses("JFK"))
 
 def get_flight_api(origin_city):
 
@@ -157,7 +159,7 @@ def get_closest_city_codes(latitude, longitude, cities, num_results=3, max_dista
     return closest_city_codes
 
 
-def get_iata_code_from_address(address):
+def get_iata_code_from_address(address, date):
 
     google_url = f"https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={ROUTES_API_KEY}"
 
@@ -168,7 +170,7 @@ def get_iata_code_from_address(address):
    # cities = load_cities_from_file('cities2.json')
     skyId, entityId = get_nearby_airports(lat, lng)
     print(f"{skyId}, {entityId}")
-    data = get_flights("NYCA", '27537542', skyId, entityId, "2024-10-25")
+    data = get_flights("NYCA", '27537542', skyId, entityId, date)
     return parse_flight_data(data)
 
 
