@@ -1,50 +1,79 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Input Form</title>
     <style>
-      body {
-        background-image: url("background.jpg");
-        background-size: cover;
-        text-align: center;
-      }
-      img {
-        display: block;
-        margin: 0 auto;
-      }
-      .image-caption {
-        text-align: center;
-        font-style: italic;
-        font-size: smaller;
-        margin-top: 0.5em;
-      }
-      .text-box {
-        width: 50%;
-        margin: 0 auto;
-        padding: 1em;
-        border: 2px solid black;
-        text-align: center;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            background-image("background.jpg")
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        label {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+            outline: none;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Japanese Tutoring by Aidan Chu</h1>
-  
-    <p>Are you interested in learning Japanese? Look no further! I am Aidan Chu and I offer tutoring services to help you master the Japanese language.</p>
-  
-    <h2>About Me</h2>
-  
-    <p>I am a native Japanese speaker with years of experience teaching the language to students of all levels. Whether you are a beginner looking to learn the basics or an advanced learner looking to improve your skills, I can help you reach your goals.</p>
-  
-    <h2>Tutoring Services</h2>
-  
-    <p>My tutoring services include one-on-one lessons tailored to your individual needs and goals. I offer flexible scheduling and competitive rates. Contact me today to learn more and book your first lesson!</p>
-  
-    <p>My rate is $10 per hour. Contact me to book your first lesson and get started on your journey to mastering Japanese!</p>
-  
-    <h2>Contact Me</h2>
-  
-    <p>You can reach me by email at <a href="mailto:aidan@japanese-tutoring.com">aidan@japanese-tutoring.com</a> or by phone at 626-818-6366. I look forward to helping you learn Japanese!</p>
-  
-    <img src="anime-girl.jpg" alt="Anime girl">
-    <p class="image-caption">Me to you if you buy my services https://www.instagram.com/walnutscioly/</p>
-  </body>
+</head>
+<body>
+    <div class="container">
+        <label for="address">Enter your address:</label>
+        <input type="text" id="address" placeholder="1234 Main St">
+        <button onclick="storeAddress()">Submit</button>
+    </div>
+
+    <script>
+        let userAddress = '';
+
+        function storeAddress() {
+            userAddress = document.getElementById("address").value;
+            alert("Address saved: " + userAddress);
+            // You can use the 'userAddress' variable later as needed
+            console.log("User Address: " + userAddress);
+        }
+    </script>
+</body>
 </html>
