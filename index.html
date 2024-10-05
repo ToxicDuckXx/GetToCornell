@@ -5,22 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Address Input Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpihTHfvYy26ThvIvakeNrsPI6dmcL-dM&libraries=places"></script>
 </head>
 <body>
     <div class="container">
         <label for="address">Enter your address:</label>
         <input type="text" id="address" placeholder="1234 Main St">
         <button onclick="storeAddress()">Submit</button>
+        <p id="resultMessage"></p> <!-- Paragraph to display the result -->
     </div>
 
     <script>
-        let userAddress = '';
-
         function storeAddress() {
-            userAddress = document.getElementById("address").value;
-            alert("Address saved: " + userAddress);
-            // You can use the 'userAddress' variable later as needed
-            console.log("User Address: " + userAddress);
+            let userAddress = document.getElementById("address").value;
+
+            if (userAddress) {
+                calculateDistance(userAddress);
+            } else {
+                document.getElementById("resultMessage").innerText = "Please enter a valid address.";
+            }
+        }
+
+        function calculateDistance(userAddress) {
+            const service = new google.maps.DistanceMatrixService();
+            const destination = "Cornell University, Ithaca, NY";
+            
+            service.getDistanceMatrix(
+                {
+                    origins: [userAddress],
+                    destinations: [destination],
+                    travelMode: 'DRIVING',
+                    unitSystem: google.maps.UnitSystem.IMPERIAL,
+                },
+                (response, status) => {
+                    if (status === 'OK') {
+                        const result = response.rows[0].elements[0];
+                        if (result.status === 'OK') {
+                            const distance = result.distance.text; // Get the distance (e.g., "500 miles")
+                            document.getElementById("resultMessage").innerText = 
+                                `Your address is: ${userAddress} and you are ${distance} from Cornell University`;
+                        } else {
+                            document.getElementById("resultMessage").innerText = 
+                                "Could not calculate distance. Please check the address and try again.";
+                        }
+                    } else {
+                        document.getElementById("resultMessage").innerText = 
+                            "Error with Google Maps API: " + status;
+                    }
+                }
+            );
         }
     </script>
 </body>
