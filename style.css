@@ -53,19 +53,22 @@ input[type="text"]:focus {
 
 button {
     margin-top: 15px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 1em;
     font-family: 'Lexend', sans-serif; /* Apply Lexend font to the button */
-    background-color: #deb887; /* Light brown color for the button (Burlywood) */
-    color: #333;
+    background: linear-gradient(135deg, #deb887, #d2a679); /* Light brown gradient background */
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px; /* Rounded corners */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.4s ease; /* Smooth transition for all properties */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 button:hover {
-    background-color: #d2a679; /* Slightly darker shade of brown on hover */
+    background: linear-gradient(135deg, #d2a679, #c18a5b); /* Slightly darker gradient on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow for lift effect */
+    transform: translateY(-3px); /* Slight lift on hover */
 }
 
 p#resultMessage {
