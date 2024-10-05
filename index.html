@@ -11,6 +11,7 @@
         <label for="address">Enter your address:</label>
         <input type="text" id="address" placeholder="Street Name, City">
         <button onclick="storeAddress()">Submit</button>
+        <p id = "Calculating distance..."></p>
         <p id="resultMessage"></p> <!-- Paragraph to display the result -->
     </div>
 
@@ -18,7 +19,7 @@
         function storeAddress() {
             const userAddress = document.getElementById("address").value.trim();
 
-            if (userAddress) {
+            if (!userAddress.isEmpty()) {
                 calculateDistance(userAddress);
             } else {
                 document.getElementById("resultMessage").innerText = "Please enter a valid address.";
