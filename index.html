@@ -55,9 +55,9 @@
 
             document.getElementById("resultMessageAddress").innerText = messageAddress;
             document.getElementById("resultMessageDate").innerText = messageDate;
-            let formUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
-            document.getElementById("debugUrl").innerText = formUrl;   
-            document.getElementById("resultFlights").innerText = getFlights(formUrl);
+            let theUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
+            document.getElementById("debugUrl").innerText = theUrl;   
+            document.getElementById("resultFlights").innerText = 'testtest 123' + getFlights(theUrl);
         }
 
         function isValidDate(dateString) {
