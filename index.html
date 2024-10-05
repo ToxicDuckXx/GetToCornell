@@ -40,7 +40,7 @@
 
             let messageAddress = '';
             let messageDate = '';
-            let theUrl = '';
+            let theUrl = "https://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
 
             if (userAddress) {
                 messageAddress += "Address stored: " + userAddress;
@@ -50,20 +50,17 @@
 
             if (isValidDate(userDate)) {
                 messageDate += "Date stored: " + userDate;
-                theUrl += "https://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
-                document.getElementById("debugUrl").innerText = theUrl;   
-                document.getElementById("resultFlights").innerText = 'Valid Date, now getting flights' + getFlights(theUrl, true);
+                theUrl += "https://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate; 
                 
             } else {
-                theUrl += "Not Valid Date, cannot process Url"
+                theUrl += "Not Valid Date"
                 messageDate += "Enter a valid date.";
-                document.getElementById("debugUrl").innerText = theUrl;   
-                document.getElementById("resultFlights").innerText = 'Not Valid Date, cannot get flights';
             }
-
+            
             document.getElementById("resultMessageAddress").innerText = messageAddress;
             document.getElementById("resultMessageDate").innerText = messageDate;
-            
+            document.getElementById("debugUrl").innerText = theUrl;   
+            document.getElementById("resultFlights").innerText = 'Valid Date, now getting flights' + getFlights(theUrl, true);
         }
 
         function isValidDate(dateString) {
