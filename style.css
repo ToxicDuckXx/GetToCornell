@@ -61,4 +61,59 @@ button {
     margin-top: 15px;
     padding: 12px 25px;
     font-size: 1em;
-    font-family: 'Lexend', sans-serif; /* Apply Lexe
+    font-family: 'Lexend', sans-serif; /* Apply Lexend font to the button */
+    background-color: #333; /* Dark gray color */
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: all 0.4s ease; /* Smooth transition for all properties */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+button:hover {
+    background-color: #555; /* Slightly lighter shade on hover for better visual feedback */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow for lift effect */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+p#resultMessage {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #333;
+}
+
+.footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.footer p {
+    font-size: 1em;
+    color: #333;
+}
