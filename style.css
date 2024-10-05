@@ -8,12 +8,13 @@
 
 body {
     font-family: 'Lexend', sans-serif;
-    background: url('KlarmanHall-Night.jpg') no-repeat center center fixed;
+    background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: space-between;
+    min-height: 100vh;
 }
 
 .container {
@@ -24,6 +25,12 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-grow: 1; /* Allow the container to take up the remaining space in the middle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 label {
@@ -57,7 +64,7 @@ button {
     font-size: 1em;
     font-family: 'Lexend', sans-serif; /* Apply Lexend font to the button */
     background: linear-gradient(135deg, #deb887, #d2a679); /* Light brown gradient background */
-    color: #fff;
+    color: #333;
     border: none;
     border-radius: 25px; /* Rounded corners */
     cursor: pointer;
@@ -78,14 +85,13 @@ p#resultMessage {
 }
 
 .footer {
-    background-color: #d2b48c; /* Light brown for the overall box */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin-top: 20px;
     margin-bottom: 20px;
 }
 
