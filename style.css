@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&display=swap');
 
 body {
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Lexend';
     background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
@@ -51,7 +51,7 @@ button {
     padding: 10px 20px;
     font-size: 1em;
     background-color: #8b5a2b; /* Dark brown for the button */
-    color: #fff;
+    color: #333;
     border: none;
     border-radius: 4px;
     cursor: pointer;
