@@ -50,7 +50,7 @@
 
             if (isValidDate(userDate)) {
                 messageDate += "Date stored: " + userDate;
-                theUrl += "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
+                theUrl += "https://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
                 document.getElementById("debugUrl").innerText = theUrl;   
                 document.getElementById("resultFlights").innerText = 'Valid Date, now getting flights' + getFlights(theUrl, true);
                 
