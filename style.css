@@ -8,12 +8,11 @@
 
 body {
     font-family: 'Lexend', sans-serif;
-    background: url('background.jpg') no-repeat center center fixed;
+    background: url('KlarmanHall-Night.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
     height: 100vh;
 }
 
@@ -25,7 +24,6 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
-    margin-top: 5%;
 }
 
 label {
@@ -84,6 +82,7 @@ p#resultMessage {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
