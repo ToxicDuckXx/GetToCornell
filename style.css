@@ -57,7 +57,7 @@ button {
     font-size: 1em;
     font-family: 'Lexend', sans-serif; /* Apply Lexend font to the button */
     background-color: #deb887; /* Light brown color for the button (Burlywood) */
-    color: #fff;
+    color: #333;
     border: none;
     border-radius: 4px;
     cursor: pointer;
