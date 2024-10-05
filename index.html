@@ -17,6 +17,8 @@
         <button onclick="storeData()">Submit</button>
         <p id="resultMessageAddress"></p> <!-- Paragraph to display the result -->
         <p id="resultMessageDate"></p>
+        <p id="debugUrl"></p>
+        <p id="resultFlights"></p>
     </div>
 
     <div class="footer">
@@ -53,6 +55,9 @@
 
             document.getElementById("resultMessageAddress").innerText = messageAddress;
             document.getElementById("resultMessageDate").innerText = messageDate;
+            let formUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
+            document.getElementById("debugUrl").innerText = formUrl;   
+            document.getElementById("resultFlights").innerText = getFlights(formUrl);
         }
 
         function isValidDate(dateString) {
@@ -77,6 +82,16 @@
             const monthDays = [31, (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
             return day <= monthDays[month - 1];
         }
+
+
+        function getFlights(theUrl) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+            xmlHttp.send( null );
+            return xmlHttp.responseText;
+        }
+
+        
     </script>
 </body>
 </html>
