@@ -2,7 +2,7 @@ import csv
 import requests
 import json
 
-ROUTES_API_KEY = "AIzaSyBpihTHfvYy26ThvIvakeNrsPI6dmcL-dM"
+ROUTES_API_KEY = ""
 
 def googleMapsBuses(startCords, endCords):
 
@@ -13,3 +13,5 @@ def googleMapsBuses(startCords, endCords):
         file.close()
     json_content = json.loads(content)
     return json_content
+
+def get_flight_api()
