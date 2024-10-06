@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get to Cornell</title>
+    <title>Cornell Flights</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <label for="address">Enter your address:</label>
+        <label for="address">Enter address:</label>
         <input type="text" id="address" placeholder="14894 S Leland Rd, Beavercreek, OR 97004">
 
-        <label for="date">Enter the date:</label>
+        <label for="date">Enter date:</label>
         <input type="text" id="date" placeholder="YYYY-MM-DD">
-
+        <div class="button-group">
+            <button id="fromButton" onclick="selectOption('from')">From Cornell</button>
+            <button id="toButton" onclick="selectOption('to')">To Cornell</button>
+        </div>
         <button onclick="storeData()">Submit</button>
+        
         <p id="resultMessageAddress"></p> <!-- Paragraph to display the result -->
         <p id="resultMessageDate"></p>
-        <p id="debugUrl"></p>
+        <p id="debugurl"></p>
         <p id="resultFlights"></p>
     </div>
 
@@ -34,14 +38,16 @@
     </div>
 
     <script>
+        let selectedOption = null;
         function storeData() {
+            
             const userAddress = document.getElementById("address").value.trim();
             const userDate = document.getElementById("date").value.trim();
 
             let messageAddress = '';
             let messageDate = '';
-            let debugUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
-            let theUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate;
+            let debugUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate + "&dir=" + selectedOption;
+            let theUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate + "&dir=" + selectedOption;
 
             if (userAddress) {
                 messageAddress += "Address stored: " + userAddress;
@@ -59,11 +65,17 @@
             
             document.getElementById("resultMessageAddress").innerText = messageAddress;
             document.getElementById("resultMessageDate").innerText = messageDate;
-            document.getElementById("debugUrl").innerText = debugUrl;   
 
-            if (isValidDate(userDate)) {   
-                document.getElementById("resultFlights").innerText = 'Valid Date, now getting flights' + getFlights(theUrl, true);
+            if (isValidDate(userDate)) {    
+                document.getElementById("debugurl").innerText = "Top 10 Recommended Flights: ";
+                var flights = JSON.parse(getFlights(theUrl, false));
+                console.log(flights);
+                console.log("~~~~~~~~~~~~~~~ WEEEEEEEEEEE ~~~~~~~~~~~~~~")
+                var flightResult = parseFlights(flights);
+                console.log(flightResult);
             }
+
+            document.getElementById("resultFlights").innerText = flightResult;
         }
 
         function isValidDate(dateString) {
@@ -95,6 +107,59 @@
             xmlHttp.open("GET", theUrl, false);
             xmlHttp.send(null);
             return xmlHttp.responseText;
+        }
+
+        function parseFlights(flights) {
+            let string_result = '';
+
+            // Sorts the flights based on increasing price
+            const len = flights.length;
+            for (let i = 0; i < len - 1; i++) {
+                let minIndex = i;
+                for (let j = i + 1; j < len; j++) {
+                    if (parseInt(flights["flights"][j]["duration"]) < parseInt(flights["flights"][minIndex]["duration"])) {
+                        minIndex = j;
+                    }
+                }
+                if (minIndex !== i) {
+                    [flights["flights"][i], flights["flights"][minIndex]] =  [flights["flights"][minIndex], flights["flights"][i]];
+                }           
+            }  
+
+            for (let i = 0; i < 10; i++) {
+                string_result += flights["flights"][i]["airline"] + ": " + flights["flights"][i]["origin"] + "→" + flights["flights"][i]["dest"] 
+                +  ", " + flights["flights"][i]["departure"] + ", " + parseInt(flights["flights"][i]["duration"] / 60) + " hr " + flights["flights"][i]["duration"] % 60 + " min. Price: " + flights["flights"][i]["price"] + "\n";
+                console.log(string_result);
+            }
+            // Return the results
+            return string_result;
+        }
+
+        
+
+        function selectOption(option) {
+            const fromButton = document.getElementById("fromButton");
+            const toButton = document.getElementById("toButton");
+
+            if (option === 'from') {
+                selectedOption = 'from';
+                toButton.style.backgroundColor = "#333";
+                toButton.style.color = "#666";
+
+                fromButton.style.backgroundColor = "#1BFC06"; 
+                fromButton.style.color = "#1BFC06";
+                
+            } else if (option === 'to') {
+                selectedOption = 'to';
+                fromButton.style.backgroundColor = "#333";
+                fromButton.style.color = "#666";
+
+                toButton.style.backgroundColor = "#1BFC06"; 
+                toButton.style.color = "#1BFC06";
+            
+            }
+
+            console.log(`Currently selected: ${selectedOption}`);
         }
 
         
