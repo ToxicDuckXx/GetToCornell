@@ -97,7 +97,7 @@ def parse_flight_data(data, dir):
                 airport = route["legs"][0]["destination"]["displayCode"]  
             else:
                 airport = route["legs"][0]["origin"]["displayCode"]  
-            maps_bus_embed = f"https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJndqRYRqC0IkR9J8bgk3mDvU-w&destination={airport}&key=AIzaSyDRPlQT-oqfn2Vkr6OBsQSfmc7q0axo8a8&mode=transit"
+            maps_bus_embed = f"https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJR0lA1VBmwokR8BGfSBOyT-w&destination={"JFK"}&key=AIzaSyDRPlQT-oqfn2Vkr6OBsQSfmc7q0axo8a8&mode=transit"
 
             result["flights"].append({"duration":route["legs"][0]["durationInMinutes"], "departure":formatted_time, "price":route["price"]["formatted"], "flt":route["legs"][0]["segments"][0]["flightNumber"], "airline":route["legs"][0]["carriers"]["marketing"][0]["name"], "logo":route["legs"][0]["carriers"]["marketing"][0]["logoUrl"], "origin":route["legs"][0]["origin"]["displayCode"], "dest":route["legs"][0]["destination"]["displayCode"], "embed":maps_bus_embed})
     return result
