@@ -11,4 +11,4 @@ Plan your journey to Cornell University with ease. This website helps you input 
 
 By Lucas, Duke, and Jack
 
-First website github: https://github.com/Jack-Zhou27/big-red-hacks
+First website github: https://github.com/Jack-Zhou27/big_red_hacks
