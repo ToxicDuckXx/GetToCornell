@@ -5,8 +5,8 @@ import json
 import math
 from datetime import datetime
 
-ROUTES_API_KEY = "AIzaSyBpihTHfvYy26ThvIvakeNrsPI6dmcL-dM"
-FLIGHTS_API_KEY = "a02425033bmsheb3a4cb3ac254f0p16351fjsnc919150b9517"
+ROUTES_API_KEY = ""
+FLIGHTS_API_KEY = ""
 
 def haversine(lat1, lon1, lat2, lon2):
     """Calculate the great circle distance in miles between two points 
