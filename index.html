@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container", id="cont">
+        <h1 class="container-title">Get to Cornell</h1>
         <label for="address">Enter address:</label>
         <input type="text" id="address" placeholder="14894 S Leland Rd, Beavercreek, OR 97004">
 
@@ -16,10 +17,14 @@
         <div class="button-group">
             <button id="fromButton" onclick="selectOption('from')">From Cornell</button>
             <button id="toButton" onclick="selectOption('to')">To Cornell</button>
+            <button id="sample" onclick="sample()">See Sample</button>
         </div>
         <button onclick="storeData()">Submit</button>
-        <p id="debugUrl"></p>
-        <p id="resultFlights"></p>
+        <test id="debugUrl"></test>
+        <div class="column-container">
+            <div id="column1" class="column"></div>
+            <div id="column2" class="column"></div>
+        </div>
     </div>
 
     <div id="place"></div>
@@ -33,15 +38,27 @@
                 <img src="images/LI-In-Bug.png" alt="LinkedIn Logo">
             </a>
         </div>
-        <p>Made by Lucas, Jack, and Duke @BigRed//Hacks 2024</p>
+        <p>Made by Lucas, Jack, and Duke @ BigRed//Hacks 2024</p>
     </div>
 
     <script>
-        let selectedOption = null;
+        let selectedOption = "from";
+
+        function sample() {
+            let userAddress = '14894 S Leland Rd, Beavercreek, OR 97004';
+            let userDate = '2024-10-15'
+            document.getElementById("debugUrl").innerText = "Top 10 Recommended flights: \n from " + userAddress + " on " + userDate;
+            let theUrl = "http://34.66.120.146:5000/get?addr=" + userAddress + "&date=" + userDate + "&dir=to";
+            var flights = JSON.parse(getFlights(theUrl, false));
+            var flightResult = createFlightContainer(flights);
+        }
+
         function storeData() {
-            
-            const userAddress = document.getElementById("address").value.trim();
-            const userDate = document.getElementById("date").value.trim();
+            document.getElementById("column1").innerText = '';
+            document.getElementById("column2").innerText = '';
+        
+            let userAddress = document.getElementById("address").value.trim();
+            let userDate = document.getElementById("date").value.trim();
 
             let messageAddress = '';
             let messageDate = '';
@@ -64,7 +81,7 @@
 
 
             if (isValidDate(userDate)) {    
-                document.getElementById("debugUrl").innerText = "Top 10 Recommended Flights: ";
+                document.getElementById("debugUrl").innerText = "Top 10 Recommended flights: \n " + selectedOption + " " + userAddress + " on " + userDate;
                 var flights = JSON.parse(getFlights(theUrl, false));
                 console.log(flights);
                 console.log("~~~~~~~~~~~~~~~ WEEEEEEEEEEE ~~~~~~~~~~~~~~")
@@ -98,9 +115,22 @@
         }
 
         function createFlightContainer(flights) {
+            // Sorting Algorithm
+            const len = flights.length;
+            for (let i = 0; i < len - 1; i++) {
+                let minIndex = i;
+                for (let j = i + 1; j < len; j++) {
+                    if (parseInt(flights["flights"][j]["duration"]) < parseInt(flights["flights"][minIndex]["duration"])) {
+                        minIndex = j;
+                    }
+                }
+                if (minIndex !== i) {
+                    [flights["flights"][i], flights["flights"][minIndex]] =  [flights["flights"][minIndex], flights["flights"][i]];
+                }           
+            } 
             
-            for (let i = 0; i < 10; i++) {
-                let body = document.getElementById("cont")
+            for (let i = 0; i < 10; i+=2) {
+                let body = document.getElementById("column1")
                 let cont = document.createElement("div")
                 let link = document.createElement("a")
                 link.href = flights["flights"][i]["embed"]
@@ -109,7 +139,27 @@
                 cont.style.borderRadius = "10px";
                 cont.style.padding = "10px";
                 let header = document.createElement("h4")
-                header.innerHTML = flights["flights"][i]["airline"] + ": " + flights["flights"][i]["origin"] + "→" + flights["flights"][i]["dest"]
+                header.innerHTML = i+1 + ". " + flights["flights"][i]["airline"] + ": " + flights["flights"][i]["origin"] + "→" + flights["flights"][i]["dest"]
+                cont.appendChild(header)
+                let time = document.createElement("p")
+                time.innerHTML = flights["flights"][i]["departure"] + ", " + parseInt(flights["flights"][i]["duration"] / 60) + " hr " + flights["flights"][i]["duration"] % 60 + " min. Price: " + flights["flights"][i]["price"]
+                cont.appendChild(time)
+                cont.appendChild(link)
+                body.appendChild(cont)
+                
+            }
+
+            for (let i = 1; i < 10; i+=2) {
+                let body = document.getElementById("column2")
+                let cont = document.createElement("div")
+                let link = document.createElement("a")
+                link.href = flights["flights"][i]["embed"]
+                link.innerHTML = "Direction to airport"
+                cont.style.backgroundColor = "#d2b48c";
+                cont.style.borderRadius = "10px";
+                cont.style.padding = "10px";
+                let header = document.createElement("h4")
+                header.innerHTML = i+1 + ". " + flights["flights"][i]["airline"] + ": " + flights["flights"][i]["origin"] + "→" + flights["flights"][i]["dest"]
                 cont.appendChild(header)
                 let time = document.createElement("p")
                 time.innerHTML = flights["flights"][i]["departure"] + ", " + parseInt(flights["flights"][i]["duration"] / 60) + " hr " + flights["flights"][i]["duration"] % 60 + " min. Price: " + flights["flights"][i]["price"]
@@ -128,32 +178,6 @@
             return xmlHttp.responseText;
         }
 
-        function parseFlights(flights) {
-            let string_result = '';
-
-            // Sorts the flights based on increasing price
-            const len = flights.length;
-            for (let i = 0; i < len - 1; i++) {
-                let minIndex = i;
-                for (let j = i + 1; j < len; j++) {
-                    if (parseInt(flights["flights"][j]["duration"]) < parseInt(flights["flights"][minIndex]["duration"])) {
-                        minIndex = j;
-                    }
-                }
-                if (minIndex !== i) {
-                    [flights["flights"][i], flights["flights"][minIndex]] =  [flights["flights"][minIndex], flights["flights"][i]];
-                }           
-            }  
-
-            for (let i = 0; i < 10; i++) {
-                string_result += flights["flights"][i]["airline"] + ": " + flights["flights"][i]["origin"] + "→" + flights["flights"][i]["dest"] 
-                +  ", " + flights["flights"][i]["departure"] + ", " + parseInt(flights["flights"][i]["duration"] / 60) + " hr " + flights["flights"][i]["duration"] % 60 + " min. Price: " + flights["flights"][i]["price"] + "\n";
-                console.log(string_result);
-            }
-            // Return the results
-            return string_result;
-        }
-
         
 
         function selectOption(option) {
@@ -163,7 +187,7 @@
             if (option === 'from') {
                 selectedOption = 'from';
                 toButton.style.backgroundColor = "#333";
-                toButton.style.color = "#666";
+                toButton.style.color = "#333";
 
                 fromButton.style.backgroundColor = "#1BFC06"; 
                 fromButton.style.color = "#1BFC06";
@@ -171,7 +195,7 @@
             } else if (option === 'to') {
                 selectedOption = 'to';
                 fromButton.style.backgroundColor = "#333";
-                fromButton.style.color = "#666";
+                fromButton.style.color = "#333";
 
                 toButton.style.backgroundColor = "#1BFC06"; 
                 toButton.style.color = "#1BFC06";
