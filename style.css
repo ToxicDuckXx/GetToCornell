@@ -100,9 +100,50 @@ button:hover {
 
 
 .button-group button:hover:enabled {
-    background-color: #555; /* Darker shade when hovered */
+    background-color: #333; /* Darker shade when hovered */
 }
 
+.column-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px; /* Add space between the submit button and columns */
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+.column {
+    background-color: #d2b48c; /* Light beige background */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for visual depth */
+    flex: 1; /* Makes each column take up equal space */
+    margin: 0 10px; /* Adds space between the columns */
+    text-align: left;
+    font-size: 1em;
+    color: #333;
+}
+
+p {
+    margin-top: 5px; /* Add spacing between the button and the result message */
+    font-size: 1em; /* Maintain a readable font size */
+    color: #333; /* Standard text color for readability */
+    background-color: #d2b48c; /* Light beige background for distinction */
+    text-align: left; /* Center the text within the box */
+    max-width: 100%; /* Ensure it fits within the container */
+}
+
+test {
+    margin-top: 15px; /* Add spacing between the button and the result message */
+    font-size: 1.2em; /* Maintain a readable font size */
+    color: #333; /* Standard text color for readability */
+    background-color: #d2b48c; /* Light beige background for distinction */
+    text-align: center; /* Center the text within the box */
+    max-width: 100%; /* Ensure it fits within the container */
+    transition: all 0.3s ease; /* Smooth transition for future animation if needed */
+}
 
 p#resultMessage {
     margin-top: 20px;
@@ -111,13 +152,13 @@ p#resultMessage {
 }
 
 .footer {
-    background-color: #d2b48c;
+    background-color: #bbbbbb;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 800px;
     margin-bottom: 20px;
 }
 
@@ -142,5 +183,7 @@ p#resultMessage {
 
 .footer p {
     font-size: 1em;
+    text-align: center;
+    background-color: #bbbbbb;
     color: #333;
 }
