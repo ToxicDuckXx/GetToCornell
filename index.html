@@ -21,7 +21,8 @@
         
         <p id="resultMessageAddress"></p> <!-- Paragraph to display the result -->
         <p id="resultMessageDate"></p>
-        <p id="debugurl"></p>
+        <p id="debugUrl"></p>
+        <p id="resultFlights"></p>
     </div>
 
     <div id="place"></div>
@@ -150,8 +151,8 @@
             }  
 
             for (let i = 0; i < 10; i++) {
-                string_result += flights["flights"][i]["airline"] + ": " + flights["flights"][i]["origin"] + "→" + flights["flights"][i]["dest"]  
-                +  ", " + flights["flights"][i]["departure"] + ", " + parseInt(flights["flights"][i]["duration"] / 60) + " hr " + flights["flights"][i]["duration"] % 60 + " min. Price: " + flights["flights"][i]["price"] + " <a href=" + flights['flights'][i]['embed'] + ">Directions</a>" + "\n";
+                string_result += flights["flights"][i]["airline"] + ": " + flights["flights"][i]["origin"] + "→" + flights["flights"][i]["dest"] 
+                +  ", " + flights["flights"][i]["departure"] + ", " + parseInt(flights["flights"][i]["duration"] / 60) + " hr " + flights["flights"][i]["duration"] % 60 + " min. Price: " + flights["flights"][i]["price"] + "\n";
                 console.log(string_result);
             }
             // Return the results
