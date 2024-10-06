@@ -23,7 +23,7 @@ body {
     border-radius: 8px;
     box-sizing: border-box; /* Include padding and border in the width/height calculation */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    max-width: 800px;
     width: 100%;
     flex-grow: 0; /* Do not expand vertically */
     display: flex;
@@ -78,6 +78,29 @@ button:hover {
     background: linear-gradient(135deg, #d2a679, #c18a5b); /* Slightly darker gradient on hover */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow for lift effect */
     transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.button-group {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-family: 'Lexend', sans-serif;
+    background-color: #333; /* Default button color */
+    color: #333;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.button-group button:hover:enabled {
+    background-color: #555; /* Darker shade when hovered */
 }
 
 
