@@ -18,9 +18,6 @@
             <button id="toButton" onclick="selectOption('to')">To Cornell</button>
         </div>
         <button onclick="storeData()">Submit</button>
-        
-        <p id="resultMessageAddress"></p> <!-- Paragraph to display the result -->
-        <p id="resultMessageDate"></p>
         <p id="debugUrl"></p>
         <p id="resultFlights"></p>
     </div>
@@ -64,12 +61,10 @@
                 debugUrl = "Not Valid Date"
                 messageDate += "Enter a valid date.";
             }
-            
-            document.getElementById("resultMessageAddress").innerText = messageAddress;
-            document.getElementById("resultMessageDate").innerText = messageDate;
+
 
             if (isValidDate(userDate)) {    
-                document.getElementById("debugurl").innerText = "Top 10 Recommended Flights: ";
+                document.getElementById("debugUrl").innerText = "Top 10 Recommended Flights: ";
                 var flights = JSON.parse(getFlights(theUrl, false));
                 console.log(flights);
                 console.log("~~~~~~~~~~~~~~~ WEEEEEEEEEEE ~~~~~~~~~~~~~~")
