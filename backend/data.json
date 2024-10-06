@@ -46,19 +46,19 @@
                },
                "departure_time" : 
                {
-                  "text" : "3:05 AM",
+                  "text" : "2:27 AM",
                   "time_zone" : "America/New_York",
-                  "value" : 1728198313
+                  "value" : 1728196068
                },
                "distance" : 
                {
                   "text" : "198 mi",
-                  "value" : 319410
+                  "value" : 319417
                },
                "duration" : 
                {
-                  "text" : "10 hours 12 mins",
-                  "value" : 36690
+                  "text" : "10 hours 49 mins",
+                  "value" : 38935
                },
                "end_address" : "Terminal 4, Terminal 4 Departures, Queens, NY 11430, USA",
                "end_location" : 
@@ -172,9 +172,9 @@
                         },
                         "arrival_time" : 
                         {
-                           "text" : "3:19 AM",
+                           "text" : "2:42 AM",
                            "time_zone" : "America/New_York",
-                           "value" : 1728199165
+                           "value" : 1728196920
                         },
                         "departure_stop" : 
                         {
@@ -187,9 +187,9 @@
                         },
                         "departure_time" : 
                         {
-                           "text" : "3:07 AM",
+                           "text" : "2:29 AM",
                            "time_zone" : "America/New_York",
-                           "value" : 1728198439
+                           "value" : 1728196194
                         },
                         "headsign" : "Collegetown - Downtown",
                         "line" : 
@@ -937,7 +937,7 @@
                      "distance" : 
                      {
                         "text" : "0.1 mi",
-                        "value" : 191
+                        "value" : 198
                      },
                      "duration" : 
                      {
@@ -952,7 +952,7 @@
                      "html_instructions" : "Walk to Terminal 4, Terminal 4 Departures, Queens, NY 11430, USA",
                      "polyline" : 
                      {
-                        "points" : "ehawFfsiaMj@fE?E^mAMa@BBFRBFA@K]QOUA"
+                        "points" : "ehawFfsiaMj@fE?E^mAK]CBA@A?@@HV?@FEK[QOUA"
                      },
                      "start_location" : 
                      {
@@ -1038,13 +1038,13 @@
                            },
                            "end_location" : 
                            {
-                              "lat" : 40.6437191,
-                              "lng" : -73.7828543
+                              "lat" : 40.6437113,
+                              "lng" : -73.78287209999999
                            },
                            "html_instructions" : "Take the escalator \u003cb\u003eup\u003c/b\u003e to the 3rd floor (Terminal 4 Level 3)",
                            "polyline" : 
                            {
-                              "points" : "yeawFzviaMMa@"
+                              "points" : "yeawFzviaMK]"
                            },
                            "start_location" : 
                            {
@@ -1060,8 +1060,8 @@
                            },
                            "distance" : 
                            {
-                              "text" : "49 ft",
-                              "value" : 15
+                              "text" : "72 ft",
+                              "value" : 22
                            },
                            "duration" : 
                            {
@@ -1070,18 +1070,18 @@
                            },
                            "end_location" : 
                            {
-                              "lat" : 40.6436472,
-                              "lng" : -73.7830196
+                              "lat" : 40.643651,
+                              "lng" : -73.78301039999999
                            },
-                           "html_instructions" : "Walk for 49 ft",
+                           "html_instructions" : "Walk for 72 ft",
                            "polyline" : 
                            {
-                              "points" : "gfawFxuiaMBBFRBFA@"
+                              "points" : "efawF|uiaMCBA@A?@@HV?@FE"
                            },
                            "start_location" : 
                            {
-                              "lat" : 40.6437191,
-                              "lng" : -73.7828543
+                              "lat" : 40.6437113,
+                              "lng" : -73.78287209999999
                            },
                            "travel_mode" : "WALKING"
                         },
@@ -1108,12 +1108,12 @@
                            "html_instructions" : "Take the escalator \u003cb\u003eup\u003c/b\u003e to the 4th floor (Terminal 4 Level 4)",
                            "polyline" : 
                            {
-                              "points" : "yeawFzviaMK]"
+                              "points" : "yeawFxviaMK["
                            },
                            "start_location" : 
                            {
-                              "lat" : 40.6436472,
-                              "lng" : -73.7830196
+                              "lat" : 40.643651,
+                              "lng" : -73.78301039999999
                            },
                            "travel_mode" : "WALKING"
                         },
@@ -1187,7 +1187,7 @@
          ],
          "overview_polyline" : 
          {
-            "points" : "_tbbGdqwqMD`A?vA?dG@dFBRr@rAZfAv@fDFr@Cd@Gx@Cb@p@J\\Dr@TnAtA`@l@JXXbAh@|@t@^t@BbCItMY|LSBlFCrF`CBb@Bx@RbA\\f@BdBYl@Al@JxDErGMpLSrAGv@pDN\\m@pAmAfCqC|F}B`FEjDBnIS~DI~A]~@MPy@t@s@p@Wf@Sp@SzADnDCl@G?B`CC?bdaAasqBhtrFckzJEEJwAF}CVyCZkGFoANoA\\qCpAiLdD{Y|Ku`AfA}JLmBJq@PmA\\gCjAmJhAyIDSd@JOhACJNFKV?]PF?Nn@PnA^BKnB`AjDfA^D~@?v@Un@i@lA}Ap@k@t@]t@GdD`@fBRfG^hKdBxNl@r@ErHk@b@?fAPfIlCr@PbN`DnXbI^J|@^`J`Gx@f@bu@fX~@^lHzE|@p@vFxFtArAjEzCjA`@l@BvHQt@@t@Lp@XzMxIryFzuD|n@~a@ke@c[u@gAWuAFaBLs@lD{Kd`@smAjPch@|@oBb@q@rSu\\lAeC`CgGdBcGdA_G`Jex@HiBCgBS}AcIe[q@gB_@i@{GqH{@kAq@qAi@uAa@_Bg@mEWcb@MmDkHoj@]qDIuDFwDpC}ZLwDAyAe@}JAaCHyBZsB~Syp@~b@osAdFuMlBeEbAmBdG{Il@o@tBqAdSsIfAq@bA{@z@eAv@oAxA_EdGeZx@qD~AkFnBuEvB}EnBsG~WicAnA{D|@aChAcCpAuBxAgBvBgCnBuCdB_Dl@uA`HgShHaT`@gAdAkClM}[`AqBlCuE~DeGdDiGbIuSt@iC`Ki^v@kB`AsAlA_AjB_AvJyEzI{Ef@[b@Uz@e@l@W`L_EbImDlAaA|@sAn@cBzBaNBsACqAOoAwAuHa@_Bg@yAa@}AGc@JKOFGe@xAk@dFnDJGnArEj@jDpBvH`@~Ab@`AX`@ZZVNb@FLBdA?d@KbAi@fAm@nUqKfUwKzKcF|RaIp]wMvRkHhC{@lD}@rAOpGY|G?dFJnC\\xA`@pClAzAz@rBbAzAj@jF|AvAVjBNvBNxA?tF@zGD`CBl@Nz@h@b@x@fAbEh@jAv@x@~AlAz@r@t@d@lBv@hBV`CCpB[fCs@lBw@pI{ErJyGzCgCjGiGfCuCdA{At@uAdAgCj@oBfA_GLiBHeISwHWeIC{CHeAh@sB~@kA~@k@dAoA`Aq@fFmDh@_APy@P{A`@uDDa@?o@UeAe@k@}@q@c@[m@}@{@uB{B_H_@iAf@hE?E^mAMa@JV@HK]QOUA"
+            "points" : "_tbbGdqwqMD`A?vA?dG@dFBRr@rAZfAv@fDFr@Cd@Gx@Cb@p@J\\Dr@TnAtA`@l@JXXbAh@|@t@^t@BbCItMY|LSBlFCrF`CBb@Bx@RbA\\f@BdBYl@Al@JxDErGMpLSrAGv@pDN\\m@pAmAfCqC|F}B`FEjDBnIS~DI~A]~@MPy@t@s@p@Wf@Sp@SzADnDCl@G?B`CC?bdaAasqBhtrFckzJEEJwAF}CVyCZkGFoANoA\\qCpAiLdD{Y|Ku`AfA}JLmBJq@PmA\\gCjAmJhAyIDSd@JOhACJNFKV?]PF?Nn@PnA^BKnB`AjDfA^D~@?v@Un@i@lA}Ap@k@t@]t@GdD`@fBRfG^hKdBxNl@r@ErHk@b@?fAPfIlCr@PbN`DnXbI^J|@^`J`Gx@f@bu@fX~@^lHzE|@p@vFxFtArAjEzCjA`@l@BvHQt@@t@Lp@XzMxIryFzuD|n@~a@ke@c[u@gAWuAFaBLs@lD{Kd`@smAjPch@|@oBb@q@rSu\\lAeC`CgGdBcGdA_G`Jex@HiBCgBS}AcIe[q@gB_@i@{GqH{@kAq@qAi@uAa@_Bg@mEWcb@MmDkHoj@]qDIuDFwDpC}ZLwDAyAe@}JAaCHyBZsB~Syp@~b@osAdFuMlBeEbAmBdG{Il@o@tBqAdSsIfAq@bA{@z@eAv@oAxA_EdGeZx@qD~AkFnBuEvB}EnBsG~WicAnA{D|@aChAcCpAuBxAgBvBgCnBuCdB_Dl@uA`HgShHaT`@gAdAkClM}[`AqBlCuE~DeGdDiGbIuSt@iC`Ki^v@kB`AsAlA_AjB_AvJyEzI{Ef@[b@Uz@e@l@W`L_EbImDlAaA|@sAn@cBzBaNBsACqAOoAwAuHa@_Bg@yAa@}AGc@JKOFGe@xAk@dFnDJGnArEj@jDpBvH`@~Ab@`AX`@ZZVNb@FLBdA?d@KbAi@fAm@nUqKfUwKzKcF|RaIp]wMvRkHhC{@lD}@rAOpGY|G?dFJnC\\xA`@pClAzAz@rBbAzAj@jF|AvAVjBNvBNxA?tF@zGD`CBl@Nz@h@b@x@fAbEh@jAv@x@~AlAz@r@t@d@lBv@hBV`CCpB[fCs@lBw@pI{ErJyGzCgCjGiGfCuCdA{At@uAdAgCj@oBfA_GLiBHeISwHWeIC{CHeAh@sB~@kA~@k@dAoA`Aq@fFmDh@_APy@P{A`@uDDa@?o@UeAe@k@}@q@c@[m@}@{@uB{B_H_@iAf@hE?E^mAK]CBC@JZFEK[QOUA"
          },
          "summary" : "",
          "warnings" : 

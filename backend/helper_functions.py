@@ -1,4 +1,5 @@
 
+
 import csv
 import requests
 import json
@@ -70,11 +71,11 @@ def get_nearby_airports(lat, lng):
     entityID = response.json()["data"]["current"]["entityId"]
     return (skyID, entityID)
 
-def get_flights(start_skyID, startId, dest_skyID, destId, date):
+def get_flights(start_skyID, startId, dest_skyID, destId, date, amount):
     
     url = "https://sky-scrapper.p.rapidapi.com/api/v2/flights/searchFlights"
 
-    querystring = {"originSkyId":start_skyID,"destinationSkyId":dest_skyID,"originEntityId":startId,"destinationEntityId":destId,"cabinClass":"economy","adults":"1","sortBy":"best","currency":"USD","market":"en-US","countryCode":"US","date":date}
+    querystring = {"originSkyId":start_skyID,"destinationSkyId":dest_skyID,"originEntityId":startId,"destinationEntityId":destId,"cabinClass":"economy","adults":"1","sortBy":"best","currency":"USD","market":"en-US","countryCode":"US","date":date,"limit":amount}
 
     headers = {
         "x-rapidapi-key": "a02425033bmsheb3a4cb3ac254f0p16351fjsnc919150b9517",
@@ -85,11 +86,24 @@ def get_flights(start_skyID, startId, dest_skyID, destId, date):
     #flightsList = response.json()['data']['context']['legs']
     return response.json()
 
-def parse_flight_data(data, dir):
+def parse_flight_data(data, data2, dir):
 
     json_data = data['data']['itineraries']
+    json_data2 = data2['data']['itineraries']
     result = {"flights":[]}
     for route in json_data:
+        if len(route["legs"]) == 1:
+            dt = datetime.strptime(route["legs"][0]["departure"], "%Y-%m-%dT%H:%M:%S")
+            formatted_time = dt.strftime("%I:%M %p")
+            if dir == "to":
+                airport = route["legs"][0]["destination"]["displayCode"]
+                maps_bus_embed = f"https://www.google.com/maps/dir/?api=1&origin={airport}&destination=Cornell+University&travelmode=transit"
+            else:
+                airport = route["legs"][0]["origin"]["displayCode"]
+                maps_bus_embed = f"https://www.google.com/maps/dir/?api=1&origin=Cornell+University&destination={airport}&travelmode=transit"
+            result["flights"].append({"duration":route["legs"][0]["durationInMinutes"], "departure":formatted_time, "price":route["price"]["formatted"], "flt":route["legs"][0]["segments"][0]["flightNumber"], "airline":route["legs"][0]["carriers"]["marketing"][0]["name"], "logo":route["legs"][0]["carriers"]["marketing"][0]["logoUrl"], "origin":route["legs"][0]["origin"]["displayCode"], "dest":route["legs"][0]["destination"]["displayCode"], "embed":maps_bus_embed})
+    
+    for route in json_data2:
         if len(route["legs"]) == 1:
             dt = datetime.strptime(route["legs"][0]["departure"], "%Y-%m-%dT%H:%M:%S")
             formatted_time = dt.strftime("%I:%M %p")
@@ -100,6 +114,7 @@ def parse_flight_data(data, dir):
             maps_bus_embed = f"https://www.google.com/maps/embed/v1/directions?origin=place_id:ChIJndqRYRqC0IkR9J8bgk3mDvU-w&destination={airport}&key=AIzaSyDRPlQT-oqfn2Vkr6OBsQSfmc7q0axo8a8&mode=transit"
 
             result["flights"].append({"duration":route["legs"][0]["durationInMinutes"], "departure":formatted_time, "price":route["price"]["formatted"], "flt":route["legs"][0]["segments"][0]["flightNumber"], "airline":route["legs"][0]["carriers"]["marketing"][0]["name"], "logo":route["legs"][0]["carriers"]["marketing"][0]["logoUrl"], "origin":route["legs"][0]["origin"]["displayCode"], "dest":route["legs"][0]["destination"]["displayCode"], "embed":maps_bus_embed})
+
     return result
 
 
@@ -182,9 +197,11 @@ def get_iata_code_from_address(address, date, direction):
     print(f"{skyId}, {entityId}")
     if direction == "to":
         data = get_flights(skyId, entityId, "NYCA", '27537542', date)
+        data2 = get_flights(skyId, entityId, "SYR", '95674004', date, "3")
     else:
         data = get_flights("NYCA", '27537542', skyId, entityId, date)
-    return parse_flight_data(data, direction)
+        data2 = get_flights("SYR", '95674004', skyId, entityId, date, "3")
+    return parse_flight_data(data, data2, direction)
 
 
 
